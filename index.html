@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>건물은 학생을 만드는가 — 부산대학교 사회학과 학술제</title>
+<meta name="description" content="단과대학 건물 인프라 차이와 학생의 만족도, 삶의 질 — 혼합방법 연구 발표 덱 (실측 17개 지표 · 설문 88명 · 심층 인터뷰 6명)">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/css/minim.css">
+<link rel="stylesheet" href="assets/css/apple.css">
+<style>
+  .nav-zone { position: fixed; top: 0; bottom: 0; width: 13%; z-index: 40; cursor: pointer; }
+  .nav-zone.l { left: 0; }
+  .nav-zone.r { right: 0; }
+  .nav-zone::after {
+    content: ""; position: absolute; top: 50%; width: 26px; height: 26px;
+    border-top: 2px solid rgba(255,255,255,0.25); border-left: 2px solid rgba(255,255,255,0.25);
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .nav-zone.l::after { left: 26px; transform: translateY(-50%) rotate(-45deg); }
+  .nav-zone.r::after { right: 26px; transform: translateY(-50%) rotate(135deg); }
+  .nav-zone:hover::after { opacity: 1; }
+</style>
+</head>
+<body>
+
+<div class="hud hud-top"><div class="hud-progress" id="progress"></div></div>
+<div class="nav-zone l" id="zoneL" aria-label="이전 슬라이드"></div>
+<div class="nav-zone r" id="zoneR" aria-label="다음 슬라이드"></div>
+
+<div class="stage">
+  <main class="deck" id="deck">
+
+    <!-- 01 표지 -->
+    <section class="slide layout-center" id="s1" data-num="01">
+      <p class="kicker" data-m="up">부산대학교 사회학과 · 학술제 발표</p>
+      <h1 class="apple-hero glow-text" data-m="up" style="margin:8px 0 24px">건물은 학생을 만드는가</h1>
+      <p class="apple-lead" data-m="fade">단과대학 건물 인프라 차이와 학생의 만족도, 삶의 질</p>
+      <div class="row gap-sm" style="justify-content:center; margin-top:42px">
+        <span class="badge" data-m="scale">혼합방법 연구</span>
+        <span class="badge" data-m="scale">실측 17개 지표</span>
+        <span class="badge" data-m="scale">설문 88명</span>
+        <span class="badge" data-m="scale">심층 인터뷰 6명</span>
+      </div>
+      <p class="footnote" data-m="fade" style="margin-top:46px">총 15장 · 약 25분 — <b>→</b> 다음 · <b>←</b> 이전 · <b>F</b> 전체화면</p>
+    </section>
+
+    <!-- 02 배경 -->
+    <section class="slide" id="s2" data-num="02">
+      <header class="slide-head" data-m="up">
+        <p class="kicker">배경 — 01</p>
+        <h2 class="title">같은 등록금, 같은 학점 — 그러나 다른 캠퍼스 경험</h2>
+        <div class="rule"></div>
+      </header>
+
+      <div class="timeline" style="margin-top:8px">
+        <div class="t-line mline"></div>
+        <div class="node old" data-m="up">
+          <span class="badge old"><span class="dot" style="background:#E8A33D"></span>1980 준공 · 임시 사용 중</span>
+          <div class="year c-amber" data-m="zoom">1980</div>
+          <h3>생물관 — 사회과학대학</h3>
+          <p class="body">준공 후 <strong class="c-amber">46년</strong>. 사회과학대학이 임시로 사용 중인 건물.</p>
+        </div>
+        <div class="node" data-m="up">
+          <span class="badge new"><span class="dot" style="background:#5865F2"></span>2013 준공</span>
+          <div class="year c-blue" data-m="zoom">2013</div>
+          <h3>경제통상관</h3>
+          <p class="body">준공 후 <strong class="c-blue">13년</strong>. 최근 설계·시공 기준을 반영한 건물.</p>
+        </div>
+      </div>
+
+      <p class="lead" data-m="fade" style="margin-top:26px">건물의 연식과 인프라가 다른 두 단과대학 — <strong>그 차이는 학생의 만족도와 삶의 질로 이어질까?</strong></p>
+    </section>
+
+    <!-- 03 연구 설계 -->
+    <section class="slide" id="s3" data-num="03">
+      <header class="slide-head" data-m="up">
+        <p class="kicker">연구 설계 — 02</p>
+        <h2 class="title">혼합방법 연구 — 격차를 세 겹으로 측정하다</h2>
+        <div class="rule"></div>
+      </header>
+
+      <div class="grid grid-3" style="margin-top:6px">
+        <div class="card" data-m="scale">
+          <div class="card-icon">01</div>
+          <h3>실측조사</h3>
+          <div class="num">17<small>개 지표</small></div>
+          <p class="caption">건물 인프라를 직접 측정 — 연식·면적·시설 등 17개 지표를 표준화해 격차를 객관화.</p>
+        </div>
+        <div class="card" data-m="scale">
+          <div class="card-icon">02</div>
+          <h3>설문조사</h3>
+          <div class="num">88<small>명</small></div>
+          <p class="caption">시설 만족도 · 대학생활 만족 · 삶의 만족 · 수업 외 체류 시간 · '우리 건물' 소속감.</p>
+        </div>
+        <div class="card" data-m="scale">
+          <div class="card-icon">03</div>
+          <h3>심층 인터뷰</h3>
+          <div class="num">6<small>명</small></div>
+          <p class="caption">수치가 말하지 않는 대응 전략의 이유와 맥락 — 학생들은 건물에 어떻게 반응하는가.</p>
+        </div>
+      </div>
+
+      <div class="flow" style="margin-top:auto">
+        <span class="badge" data-m="fade">측정 가능한 격차</span>
+        <span class="sep" data-m="fade">→</span>
+        <span class="badge" data-m="fade">지각된 격차</span>
+        <span class="sep" data-m="fade">→</span>
+        <span class="badge" data-m="fade">해석된 격차</span>
+        <span class="caption dim" data-m="fade" style="margin-left:6px">— 실측 → 설문 → 인터뷰의 삼각화</span>
+      </div>
+    </section>
+
+    <!-- 04 격차의 실재 ① -->
+    <section class="slide" id="s4" data-num="04">
+      <header class="slide-head" data-m="up">
+        <p class="kicker">격차의 실재 — 03</p>
+        <h2 class="title">실측 종합 상대 점수 — <span class="c-amber">0.80</span> vs <span class="c-blue">1.20</span></h2>
+        <div class="rule"></div>
+      </header>
+
+      <div class="split" style="margin-top:6px">
+        <div class="chart-box" data-m="scale">
+          <span class="chart-title">실측 17개 지표 표준화 종합 (기준 1.00)</span>
+          <div id="s4-chart"></div>
+        </div>
+        <div class="side">
+          <div class="stat" data-m="up">
+            <div class="stat-num c-red mcount" data-count="0.40" data-dec="2">0.00</div>
+            <div class="stat-label">종합 상대 점수 격차 — 1.20 − 0.80</div>
+          </div>
+          <p class="body" data-m="up">같은 등록금, 같은 학점 — 그러나 <strong>건물이 제공하는 기본 조건</strong>은 기준선(1.00)을 사이에 두고 갈린다.</p>
+          <p class="footnote" data-m="fade" style="margin-top:auto">종합 상대 점수는 17개 실측 지표를 표준화한 상대 지수다. 1.00은 전체 지표의 평균 기준선이며, 0.80과 1.20은 각 건물의 상대적 위치를 뜻한다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 격차의 실재 ② -->
+    <section class="slide" id="s5" data-num="05">
+      <header class="slide-head" data-m="up">
+        <p class="kicker">격차의 실재 — 04</p>
+        <h2 class="title">시설 만족도 격차 — Hedges' g = <span class="c-red">1.41</span></h2>
+        <div class="rule"></div>
+      </header>
+
+      <div class="split" style="margin-top:6px">
+        <div class="side">
+          <p class="lead" data-m="up">건물에 대한 주관적 평가는 <strong class="c-red">g = 1.41</strong>.</p>
+          <p class="body" data-m="up">효과 크기 해석 관례(small 0.2 · medium 0.5 · large 0.8)에서 <strong class="c-red">'큼(large)'을 크게 웃도는</strong> 격차다.</p>
+          <div class="stat" data-m="up" style="margin-top:14px">
+            <div class="stat-num mcount" data-count="1.41" data-dec="2">0.00</div>
+            <div class="stat-label">시설 만족도 Hedges' g — 설문 n = 88</div>
+          </div>
+        </div>
+        <div class="chart-box" data-m="scale">
+          <span class="chart-title">효과 크기 분포에서의 위치</span>
+          <div id="s5-chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 평균의 함정 -->
+    <section class="slide" id="s6" data-num="06">
+      <header class="slide-head" data-m="up">
+        <p class="kicker">평균의 함정 — 05</p>
+        <h2 class="title">시설은 크게 다른데, '삶'은 크게 다르지 않다?</h2>
+        <div class="rule"></div>
+      </header>
+
+      <div class="split" style="margin-top:6px">
+        <div class="side">
+          <p class="lead" data-m="up">설문 88명의 평균을 따라가 보면 —</p>
+          <p class="body" data-m="up">대학생활 만족 <strong class="c-green">g = 0.15</strong>, 삶의 만족 <strong class="c-amber">g = 0.36</strong>. 둘 다 small 구간에 머물며, <strong>평균적으로는 유의한 차이가 없다</strong>.</p>
+          <div class="row gap-sm wrap" data-m="fade" style="margin-top:8px">
+            <span class="badge red">시설 만족도 g = 1.41 — 큰 격차</span>
+            <span class="badge green">대학생활 만족 g = 0.15 — ns</span>
+            <span class="badge green">삶의 만족 g = 0.36 — ns</span>
+          </div>
+          <p class="footnote" data-m="fade" style="margin-top:auto">ns = 통계적으로 유의하지 않음(평균 기준). 격차가 없다는 뜻이 아니라, <strong>평균이 격차를 감추고 있다</strong>는 신호다.</p>
+        </div>
+        <div class="chart-box" data-m="scale">
+          <span class="chart-title">대학생활·삶의 만족 — 효과 크기 위치</span>
+          <div id="s6-chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 학생의 대응 -->
+    <section class="slide" id="s7" data-num="07">
+      <header class="slide-head" data-m="up">
+        <p class="kicker">학생의 대응 — 06</p>
+        <h2 class="title">평균이 격차를 숨기는 방법 — 학생들은 <span class="c-amber">떠난다</span></h2>
+        <div class="rule"></div>
+      </header>
+
+      <div class="split" style="margin-top:6px">
+        <div class="side">
+          <p class="lead" data-m="up">수업 외 체류 시간 <strong class="c-amber">g = 0.51</strong>.</p>
+          <p class="body" data-m="up">불편한 건물에 머물지 않는 것 — <strong>'체류 시간'은 곧 학생들의 선택이 남긴 기록</strong>이다. 격차는 사라진 것이 아니라 이동으로 상쇄된 것이다.</p>
+          <div class="flow" data-m="fade" style="margin-top:12px">
+            <span class="badge old"><span class="dot" style="background:#E8A33D"></span>생물관 — 불편</span>
+            <span class="sep">→</span>
+            <span class="badge">도서관</span>
+            <span class="badge">카페</span>
+            <span class="badge">다른 건물</span>
+          </div>
+        </div>
+        <div class="chart-box" data-m="scale">
+          <span class="chart-title">수업 외 체류 시간 — 효과 크기 위치</span>
+          <div id="s7-chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 인터뷰 -->
+    <section class="slide" id="s8" data-num="08">
+      <header class="slide-head" data-m="up">
+        <p class="kicker">심층 인터뷰 — 07</p>
+        <h2 class="title">이동의 전략 — 인터뷰가 보여주는 맥락</h2>
+        <div class="rule"></div>
+      </header>
+
+      <div class="grid grid-3" style="margin-top:6px">
+        <blockquote class="quote quote-placeholder" data-m="quote">[인터뷰 인용 원문 자리]
+          <span class="who">— 인터뷰 참여자 0○ · <b>원문 확보 후 교체</b></span>
+        </blockquote>
+        <blockquote class="quote quote-placeholder" data-m="quote">[인터뷰 인용 원문 자리]
+          <span class="who">— 인터뷰 참여자 0○ · <b>원문 확보 후 교체</b></span>
+        </blockquote>
+        <blockquote class="quote quote-placeholder" data-m="quote">[인터뷰 인용 원문 자리]
+          <span class="who">— 인터뷰 참여자 0○ · <b>원문 확보 후 교체</b></span>
+        </blockquote>
+      </div>
+
+      <div class="card" data-m="fade" style="margin-top:auto">
+        <p class="caption">6명의 심층 인터뷰에서 반복된 패턴 — <strong>불편한 건물을 떠나 도서관·카페·다른 건물에서 시간을 보내는 '이동의 전략'</strong>. 이는 수업 외 체류 시간(g = 0.51)의 격차와 교차 확인된다. ※ 인용문은 분석 원자료와 대조 후 교체 예정이며, 임의 인용을 만들지 않는다.</p>
+      </div>
+    </section>
+
+    <!-- 09 분포 쪼개기 -->
+    <section class="slide" id="s9" data-num="09">
+      <header class="slide-head" data-m="up">
+        <p class="kicker">분포 쪼개기 — 08</p>
+        <h2 class="title">평균 아래 숨겨진 진짜 격차 — <span class="c-white">'우리 건물' 소속감</span></h2>
+        <div class="rule"></div>
+      </header>
+
+      <div class="split" style="margin-top:6px">
+        <div class="side">
+          <div class="stat" data-m="up">
+            <div class="stat-num mcount" data-count="2.55" data-dec="2" style="font-size:110px; color:#EB459E">0.00</div>
+            <div class="stat-label">'우리 건물'이라는 소속감 — Hedges' g (설문 n = 88)</div>
+          </div>
+          <p class="body" data-m="up">대학생활 만족(0.15) · 삶의 만족(0.36)과 달리, <strong>건물에 대한 소속감은 g = 2.55</strong> — 본 연구에서 확인된 가장 큰 효과 크기다. 전체 평균이 숨긴 격차가 여기 있다.</p>
+        </div>
+        <div class="chart-box" data-m="scale">
+          <span class="chart-title">전 지표 최대 효과 크기</span>
+          <div id="s9-chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 학년별 히스토그램 -->
+    <section class="slide" id="s10" data-num="10">
+      <header class="slide-head" data-m="up">
+        <p class="kicker">분포 쪼개기 — 09</p>
+        <h2 class="title">분포를 쪼개면 보인다 — 학년별 삶의 만족</h2>
+        <div class="rule"></div>
+      </header>
+
+      <div class="grid" style="grid-template-columns: 1.25fr 1fr; gap:22px; margin-top:2px">
+        <div class="chart-box" data-m="scale">
+          <div class="row-between">
+            <span class="chart-title">생물관 — 삶의 만족 분포</span>
+            <div class="legend">
+              <span class="item"><span class="swatch" style="background:#64B5CD"></span>1학년</span>
+              <span class="item"><span class="swatch" style="background:#E05D6E"></span>2~4학년</span>
+            </div>
+          </div>
+          <div id="s10-split"></div>
+          <p class="chart-sub" style="margin-top:8px">한 봉우리처럼 보이지만, 사실은 두 집단의 혼합 — '이봉 분포'</p>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:18px">
+          <div class="chart-box" data-m="scale">
+            <div class="row-between">
+              <span class="chart-title">1학년 비교</span>
+              <span class="badge green">차이 없음</span>
+            </div>
+            <div id="s10-p1"></div>
+          </div>
+          <div class="chart-box" data-m="scale">
+            <div class="row-between">
+              <span class="chart-title">2~4학년 비교</span>
+              <span class="badge red">g = 0.72</span>
+            </div>
+            <div id="s10-p2"></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="footnote" data-m="fade" style="margin-top:auto">옛 사회관을 경험한 <strong class="c-rose">2~4학년에서만 삶의 만족이 하락(g = 0.72)</strong>, 1학년은 차이가 없다. ※ 개형 개념도: 보고된 g 값에 기반해 재구성한 분포 개형이며 실측 분포가 아니다.</p>
+    </section>
+
+    <!-- 11 데이터 리터러시 -->
+    <section class="slide" id="s11" data-num="11">
+      <header class="slide-head" data-m="up">
+        <p class="kicker">데이터 리터러시 — 10</p>
+        <h2 class="title">이 연구가 보고 원칙에서 배운 것</h2>
+        <div class="rule"></div>
+      </header>
+
+      <div class="grid grid-2" style="margin-top:6px">
+        <div class="card" data-m="scale">
+          <h3>평균의 함정</h3>
+          <p class="caption">삶의 만족 g = 0.36(전체)은 사실 두 집단의 혼합이다 — <strong class="c-green">1학년: 차이 없음</strong>, <strong class="c-rose">2~4학년: g = 0.72</strong>. 하나의 평균이 두 개의 현실을 숨겼다.</p>
+          <svg viewBox="0 0 220 86" style="margin-top:auto; width:100%; max-height:120px">
+            <path data-m="fade" d="M4,78 C 34,78 44,20 66,20 C 88,20 98,78 128,78 L 128,78" fill="none" stroke="#64B5CD" stroke-width="2.5" opacity="0.85"/>
+            <path data-m="fade" d="M96,78 C 126,78 144,52 162,52 C 180,52 196,78 216,78" fill="none" stroke="#E05D6E" stroke-width="2.5" opacity="0.85"/>
+            <line class="mline" x1="66" y1="14" x2="66" y2="80" stroke="rgba(255,255,255,0.4)" stroke-width="1.3" stroke-dasharray="4 4"/>
+            <line class="mline" x1="162" y1="46" x2="162" y2="80" stroke="rgba(255,255,255,0.4)" stroke-width="1.3" stroke-dasharray="4 4"/>
+            <text x="66" y="8" text-anchor="middle" font-size="9" fill="#9AA0A6">같은 평균</text>
+            <text x="4" y="84" font-size="9" fill="#9AA0A6">개념도 — 평균은 같아도 분포는 다르다</text>
+          </svg>
+        </div>
+        <div class="card" data-m="scale">
+          <h3>보고 원칙</h3>
+          <div class="vlist">
+            <div class="li"><span class="mark">1</span><div class="txt"><b>평균만 들이밀지 않는다</b><span>필요 시 중앙값 · n · 표준편차를 함께 보고해 흩어진 정도를 명시한다.</span></div></div>
+            <div class="li"><span class="mark">2</span><div class="txt"><b>결측치를 조용히 평균으로 채우지 않는다</b><span>결측 패턴을 먼저 보고하고, 처리는 문서화한다.</span></div></div>
+            <div class="li"><span class="mark">3</span><div class="txt"><b>이상치를 기계적으로 지우지 않는다</b><span>극단값은 종종 가장 중요한 신호다.</span></div></div>
+            <div class="li"><span class="mark">4</span><div class="txt"><b>제공된 수치만 사용한다</b><span>g 값과 점수 외에 데이터를 임의 생성하지 않는다.</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-m="fade" style="margin-top:auto; flex-direction:row; align-items:center; gap:16px; padding:18px 26px">
+        <span class="giant" style="font-size:44px; color:var(--accent)">∴</span>
+        <p class="lead" style="font-size:21px">평균은 격차를 숨기고, <strong>분포는 격차를 드러낸다.</strong></p>
+      </div>
+    </section>
+
+    <!-- 12 결론 -->
+    <section class="slide" id="s12" data-num="12">
+      <header class="slide-head" data-m="up">
+        <p class="kicker">결론 — 11</p>
+        <h2 class="title">새 사회관에 필요한 다섯 가지 공간</h2>
+        <div class="rule"></div>
+      </header>
+
+      <p class="lead" data-m="fade" style="margin-top:2px">건물이 학생을 만든다면, 다음 사회관은 학생을 <strong>머물게</strong> 해야 한다.</p>
+
+      <div class="grid grid-5" style="margin-top:24px">
+        <div class="card" data-m="scale" style="align-items:center; text-align:center; gap:8px">
+          <div class="card-icon">①</div>
+          <h3 style="font-size:18px">쉴 곳</h3>
+          <p class="caption">휴게·쉼 공간 — 체류 시간(g = 0.51)의 역전. 쉴 자리가 생기면 건물에 머문다.</p>
+        </div>
+        <div class="card" data-m="scale" style="align-items:center; text-align:center; gap:8px">
+          <div class="card-icon">②</div>
+          <h3 style="font-size:18px">전용 학습 공간</h3>
+          <p class="caption">도서관으로 떠난 학습을 건물 안으로 되돌리는 장치.</p>
+        </div>
+        <div class="card" data-m="scale" style="align-items:center; text-align:center; gap:8px">
+          <div class="card-icon">③</div>
+          <h3 style="font-size:18px">라운지</h3>
+          <p class="caption">'우리 건물' 소속감(g = 2.55)을 되살리는 학생 간 교류 장소.</p>
+        </div>
+        <div class="card" data-m="scale" style="align-items:center; text-align:center; gap:8px">
+          <div class="card-icon">④</div>
+          <h3 style="font-size:18px">교수-학생 접점</h3>
+          <p class="caption">상담·면담 공간 — 소속감과 진로의 접점을 건물 안에.</p>
+        </div>
+        <div class="card" data-m="scale" style="align-items:center; text-align:center; gap:8px">
+          <div class="card-icon">⑤</div>
+          <h3 style="font-size:18px">다목적 공간</h3>
+          <p class="caption">동아리·세미나 — 관계가 머무는 장소.</p>
+        </div>
+      </div>
+
+      <p class="footnote" data-m="fade" style="margin-top:auto">설문(n = 88) · 인터뷰(n = 6) 응답에 기반한 제안(안). ①②③은 응답에서 직접 확인된 수요, ④⑤는 소속감 격차(g = 2.55)를 고려한 보완 제안이다.</p>
+    </section>
+
+    <!-- 13 한계 & 후속 -->
+    <section class="slide" id="s13" data-num="13">
+      <header class="slide-head" data-m="up">
+        <p class="kicker">한계와 다음 질문 — 12</p>
+        <h2 class="title">정직한 한계, 그리고 다음 연구</h2>
+        <div class="rule"></div>
+      </header>
+
+      <div class="grid grid-2" style="margin-top:6px">
+        <div class="card" data-m="scale">
+          <h3>한계</h3>
+          <div class="vlist">
+            <div class="li"><span class="mark">1</span><div class="txt"><b>두 건물의 단면 비교</b><span>인과 추정이 아니라 차이의 기술(記述)이다.</span></div></div>
+            <div class="li"><span class="mark">2</span><div class="txt"><b>단일 캠퍼스, 설문 n = 88</b><span>전체 학부생으로 일반화에는 신중해야 한다.</span></div></div>
+            <div class="li"><span class="mark">3</span><div class="txt"><b>인터뷰 n = 6</b><span>맥락 탐색에는 충분하나 포화 여부는 공개 검토가 필요하다.</span></div></div>
+            <div class="li"><span class="mark">4</span><div class="txt"><b>요약 통계치 기반 보고</b><span>원자료 공개 후 재현 검증이 필요하다.</span></div></div>
+          </div>
+        </div>
+        <div class="card" data-m="scale">
+          <h3>후속 연구</h3>
+          <div class="vlist">
+            <div class="li"><span class="mark">1</span><div class="txt"><b>신축 사회관 준공 전후 비교</b><span>같은 집단에서 건물이 바뀔 때 무엇이 달라지는가.</span></div></div>
+            <div class="li"><span class="mark">2</span><div class="txt"><b>타 대학·타 단과대 확장</b><span>건물 연식·인프라 지수를 독립변수로 한 비교 설계.</span></div></div>
+            <div class="li"><span class="mark">3</span><div class="txt"><b>공간 데이터와의 결합</b><span>체류 시간·이동 경로의 공간 분석.</span></div></div>
+            <div class="li"><span class="mark">4</span><div class="txt"><b>휴게 공간 개입의 준실험 설계</b><span>제안한 공간이 실제로 머무름을 바꾸는지 검증.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14 요약 & Q&A -->
+    <section class="slide" id="s14" data-num="14">
+      <header class="slide-head" data-m="up">
+        <p class="kicker">요약 — 13</p>
+        <h2 class="title">세 문장으로 요약하면</h2>
+        <div class="rule"></div>
+      </header>
+
+      <div class="grid grid-3" style="margin-top:6px">
+        <div class="card takeaway" data-m="scale">
+          <div class="t-num c-red">1.41</div>
+          <div class="t-head">격차는 실재한다</div>
+          <div class="t-body">실측 종합 상대 점수 0.80 vs 1.20. 시설 만족도 g = 1.41 — '큼'을 웃도는 격차.</div>
+        </div>
+        <div class="card takeaway" data-m="scale">
+          <div class="t-num c-amber">0.51</div>
+          <div class="t-head">평균은 격차를 숨긴다</div>
+          <div class="t-body">대학생활 0.15 · 삶의 만족 0.36은 유의하지 않지만, 체류 시간 g = 0.51이 말한다 — 학생들은 떠난다.</div>
+        </div>
+        <div class="card takeaway" data-m="scale">
+          <div class="t-num" style="color:#EB459E">2.55</div>
+          <div class="t-head">분포를 쪼개면 드러난다</div>
+          <div class="t-body">'우리 건물' 소속감 g = 2.55. 옛 사회관을 경험한 2~4학년에서만 삶의 만족 하락(g = 0.72).</div>
+        </div>
+      </div>
+
+      <div class="layout-center" data-m="fade" style="margin-top:auto; text-align:center">
+        <p class="display" style="font-size:36px">감사합니다</p>
+        <p class="footnote" style="margin-top:10px">원고·데이터 문의 — makeouthill@pusan.ac.kr · 부산대학교 사회학과 학술제</p>
+      </div>
+    </section>
+
+    <!-- 15 배포 가이드 -->
+    <section class="slide" id="s15" data-num="15">
+      <header class="slide-head" data-m="up">
+        <p class="kicker">부록 — 14 · 배포 가이드</p>
+        <h2 class="title">이 슬라이드를 GitHub Pages로 배포하는 6단계</h2>
+        <div class="rule"></div>
+      </header>
+
+      <div class="split" style="margin-top:6px">
+        <div style="display:flex; flex-direction:column; gap:14px">
+          <pre class="codeblock" data-m="left"><code><span class="c"># ① GitHub 인증 (웹 로그인)</span>
+<span class="cmd">gh auth login</span>
+
+<span class="c"># ② 커밋 작성자 설정</span>
+<span class="cmd">git config --global user.name</span> <span class="path">"baekuncha"</span>
+<span class="cmd">git config --global user.email</span> <span class="path">"makeouthill@pusan.ac.kr"</span></code></pre>
+          <pre class="codeblock" data-m="left"><code><span class="c"># ③ 커밋 후 저장소 생성 + 푸시</span>
+<span class="cmd">git add -A</span>
+<span class="cmd">git commit -m</span> <span class="path">"feat: 학술제 발표 덱 (15장)"</span>
+<span class="cmd">gh repo create</span> data-literacy-deck <span class="cmd">--public --source=. --remote=origin --push</span></code></pre>
+          <pre class="codeblock" data-m="left"><code><span class="c"># ④ GitHub Pages 활성화 (main 브랜치 루트)</span>
+<span class="cmd">gh api</span> repos/<span class="path">{OWNER}</span>/data-literacy-deck/pages <span class="cmd">-X POST</span> <span class="cmd">-f</span> <span class="path">"source[branch]=main"</span> <span class="cmd">-f</span> <span class="path">"source[path]=/"</span>
+
+<span class="c"># 또는 웹: Settings → Pages → Deploy from a branch → main / (root)</span></code></pre>
+        </div>
+
+        <div class="side">
+          <div class="vlist">
+            <div class="li" data-m="up"><span class="mark">1</span><div class="txt"><b>인증</b><span><span class="cmd" style="color:var(--dc-green); font-family:var(--font-mono); font-weight:600">gh auth login</span> — 브라우저에서 GitHub 로그인</span></div></div>
+            <div class="li" data-m="up"><span class="mark">2</span><div class="txt"><b>작성자 설정</b><span>이름 <b>baekuncha</b> · 이메일 <b>makeouthill@pusan.ac.kr</b></span></div></div>
+            <div class="li" data-m="up"><span class="mark">3</span><div class="txt"><b>커밋</b><span>이 폴더는 이미 git 저장소(초기 커밋)이므로 <b>git init 불필요</b></span></div></div>
+            <div class="li" data-m="up"><span class="mark">4</span><div class="txt"><b>저장소 생성 + 푸시</b><span><b>--public</b> 필수 — 무료 Pages는 공개 저장소 전용</span></div></div>
+            <div class="li" data-m="up"><span class="mark">5</span><div class="txt"><b>Pages 활성화</b><span>main / 루트 배포, 최대 1~2분 소요</span></div></div>
+          </div>
+          <div data-m="scale" style="margin-top:auto">
+            <span class="apple-chip selected" style="font-size:12.5px">⑥ 접속 주소</span>
+            <p class="footnote" style="margin-top:10px; word-break:break-all"><span class="url" style="color:var(--accent); font-family:var(--font-mono); font-size:13px">https://{OWNER}.github.io/data-literacy-deck/</span><br>{OWNER}는 본인 GitHub 아이디로 교체.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="hud hud-bottom">
+  <div class="hud-title">건물은 학생을 만드는가 — 부산대학교 사회학과 학술제</div>
+  <div class="hud-counter" id="counter">01 / 15</div>
+  <div class="hud-key"><b>← →</b> 이동 · <b>F</b> 전체화면 · <b>Home/End</b> 처음/끝</div>
+</div>
+
+<script src="assets/js/anime.min.js"></script>
+<script src="assets/js/charts.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
+  var total = slides.length;
+  var idx = -1;
+  var deck = document.getElementById("deck");
+  var counterEl = document.getElementById("counter");
+  var progressEl = document.getElementById("progress");
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+  function fit() {
+    var s = Math.min((window.innerWidth * 0.965) / 1280, (window.innerHeight * 0.93) / 720);
+    deck.style.transform = "scale(" + s + ")";
+  }
+  window.addEventListener("resize", fit);
+
+  var TYPE = {
+    up:    { props: { translateY: [36, 0], opacity: [0, 1] }, delay: 60, dur: 720 },
+    down:  { props: { translateY: [-36, 0], opacity: [0, 1] }, delay: 60, dur: 720 },
+    left:  { props: { translateX: [-48, 0], opacity: [0, 1] }, delay: 60, dur: 720 },
+    right: { props: { translateX: [48, 0], opacity: [0, 1] }, delay: 60, dur: 720 },
+    fade:  { props: { opacity: [0, 1] }, delay: 300, dur: 620 },
+    scale: { props: { scale: [0.78, 1], opacity: [0, 1] }, delay: 240, dur: 780, stagger: 100 },
+    zoom:  { props: { scale: [1.14, 1], opacity: [0, 1] }, delay: 160, dur: 820 }
+  };
+
+  function runGeneric(slide) {
+    Object.keys(TYPE).forEach(function (t) {
+      var cfg = TYPE[t];
+      var els = slide.querySelectorAll('[data-m="' + t + '"]');
+      if (!els.length) return;
+      var params = { targets: els, delay: cfg.delay, duration: cfg.dur, easing: "easeOutExpo" };
+      if (cfg.stagger) params.stagger = cfg.stagger;
+      Object.keys(cfg.props).forEach(function (k) { params[k] = cfg.props[k]; });
+      anime(params);
+    });
+  }
+
+  var STEPS = {
+    s2: [
+      { type: "line", sel: "#s2 .mline", delay: 300, dur: 1000 }
+    ],
+    s4: [
+      { type: "line", sel: "#s4 .mline", delay: 250, dur: 700 },
+      { type: "fade", sel: "#s4 .mv", delay: 350, dur: 500, stagger: 60 },
+      { type: "bar", sel: "#s4 .mbar-svg", delay: 480, dur: 1100, stagger: 220 },
+      { type: "count", sel: "#s4 .mcount", delay: 620, dur: 1300, stagger: 220 }
+    ],
+    s5: [
+      { type: "line", sel: "#s5 .mline", delay: 200, dur: 700 },
+      { type: "fade", sel: "#s5 .mv", delay: 320, dur: 500, stagger: 50 },
+      { type: "band", sel: "#s5 .mband", delay: 420, dur: 600, stagger: 130 },
+      { type: "dot", sel: "#s5 .mdot", delay: 600, dur: 900, stagger: 90 },
+      { type: "count", sel: "#s5 .mcount", delay: 750, dur: 1300, stagger: 200 },
+      { type: "fade", sel: "#s5 .mtag", delay: 1600, dur: 450 }
+    ],
+    s6: [
+      { type: "line", sel: "#s6 .mline", delay: 200, dur: 700 },
+      { type: "fade", sel: "#s6 .mv", delay: 320, dur: 500, stagger: 50 },
+      { type: "band", sel: "#s6 .mband", delay: 420, dur: 600, stagger: 130 },
+      { type: "dot", sel: "#s6 .mdot", delay: 620, dur: 900, stagger: 200 },
+      { type: "count", sel: "#s6 .mcount", delay: 780, dur: 1300, stagger: 260 },
+      { type: "fade", sel: "#s6 .mtag", delay: 1500, dur: 450, stagger: 160 }
+    ],
+    s7: [
+      { type: "line", sel: "#s7 .mline", delay: 200, dur: 700 },
+      { type: "fade", sel: "#s7 .mv", delay: 320, dur: 500, stagger: 50 },
+      { type: "band", sel: "#s7 .mband", delay: 420, dur: 600, stagger: 130 },
+      { type: "dot", sel: "#s7 .mdot", delay: 620, dur: 900 },
+      { type: "count", sel: "#s7 .mcount", delay: 780, dur: 1300 },
+      { type: "fade", sel: "#s7 .mtag", delay: 1500, dur: 450 }
+    ],
+    s8: [
+      { type: "quote", sel: "#s8 .quote", delay: 350, dur: 750, stagger: 230 }
+    ],
+    s9: [
+      { type: "line", sel: "#s9 .mline", delay: 200, dur: 700 },
+      { type: "fade", sel: "#s9 .mv", delay: 320, dur: 500, stagger: 50 },
+      { type: "band", sel: "#s9 .mband", delay: 420, dur: 600, stagger: 130 },
+      { type: "dot", sel: "#s9 .mdot", delay: 620, dur: 900 },
+      { type: "count", sel: "#s9 .mcount", delay: 500, dur: 1600, stagger: 500 },
+      { type: "fade", sel: "#s9 .mtag", delay: 1700, dur: 450 }
+    ],
+    s10: [
+      { type: "line", sel: "#s10-split .mline", delay: 200, dur: 600 },
+      { type: "hist", sel: "#s10-split .mhist", delay: 320, dur: 820, stagger: 30 },
+      { type: "mean", sel: "#s10-split .mmean", delay: 1000, dur: 500 },
+      { type: "line", sel: "#s10-p1 .mline, #s10-p2 .mline", delay: 1100, dur: 500 },
+      { type: "hist", sel: "#s10-p1 .mhist", delay: 1150, dur: 700, stagger: 26 },
+      { type: "hist", sel: "#s10-p2 .mhist", delay: 1400, dur: 700, stagger: 26 },
+      { type: "mean", sel: "#s10-p1 .mmean, #s10-p2 .mmean", delay: 1750, dur: 550 }
+    ],
+    s11: [
+      { type: "line", sel: "#s11 .mline", delay: 700, dur: 600 }
+    ],
+    s15: [
+      { type: "fade", sel: "#s15 .apple-chip", delay: 1500, dur: 500 }
+    ]
+  };
+
+  function runStep(slide, step) {
+    var els = slide.querySelectorAll(step.sel);
+    if (!els.length) return;
+    var params = {
+      targets: els,
+      delay: step.delay || 0,
+      duration: step.dur || 800,
+      easing: step.easing || "easeOutExpo"
+    };
+    if (step.stagger) params.stagger = step.stagger;
+    switch (step.type) {
+      case "line": case "bar": params.scaleX = [0, 1]; break;
+      case "hist": params.scaleY = [0, 1]; break;
+      case "dot":
+        params.scale = [0, 1.5, 1];
+        params.opacity = [0, 1];
+        params.easing = "easeOutBack";
+        break;
+      case "mean": case "band": case "fade": case "vline":
+        params.opacity = [0, 1];
+        break;
+      case "quote":
+        params.translateX = [26, 0];
+        params.opacity = [0, 1];
+        break;
+      case "count":
+        params.innerHTML = [0, function (el) { return el.getAttribute("data-count"); }];
+        params.opacity = [0, 1];
+        params.round = function (el) {
+          return Math.pow(10, parseInt(el.getAttribute("data-dec") || "2", 10));
+        };
+        break;
+    }
+    anime(params);
+  }
+
+  function go(i) {
+    var clamped = Math.max(0, Math.min(total - 1, i));
+    if (clamped === idx) { render(clamped); return; }
+    idx = clamped;
+    render(idx);
+  }
+
+  function render(i) {
+    slides.forEach(function (s, j) {
+      s.classList.toggle("is-past", j < i);
+      s.classList.toggle("is-active", j === i);
+    });
+    counterEl.textContent = pad(i + 1) + " / " + pad(total);
+    progressEl.style.width = ((i + 1) / total * 100) + "%";
+    if (location.hash !== "#" + (i + 1)) {
+      try { history.replaceState(null, "", "#" + (i + 1)); } catch (e) {}
+    }
+    runGeneric(slides[i]);
+    (STEPS[slides[i].id] || []).forEach(function (step) { runStep(slides[i], step); });
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight" || e.key === " " || e.key === "PageDown") { e.preventDefault(); go(idx + 1); }
+    else if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); go(idx - 1); }
+    else if (e.key === "Home") { e.preventDefault(); go(0); }
+    else if (e.key === "End") { e.preventDefault(); go(total - 1); }
+    else if (e.key === "f" || e.key === "F") {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else document.documentElement.requestFullscreen();
+    }
+  });
+
+  document.getElementById("zoneL").addEventListener("click", function () { go(idx - 1); });
+  document.getElementById("zoneR").addEventListener("click", function () { go(idx + 1); });
+
+  function initCharts() {
+    if (!window.SC) return;
+    SC.bar("#s4-chart", {
+      series: [
+        { label: "생물관", sub: "1980 준공 · 임시 사용", value: 0.80, color: "#E8A33D" },
+        { label: "경제통상관", sub: "2013 준공", value: 1.20, color: "#5865F2" }
+      ],
+      ref: 1.00, refLabel: "기준 1.00", xmax: 1.4, axisLabel: "종합 상대 점수"
+    });
+    SC.forest("#s5-chart", {
+      items: [{ label: "시설 만족도", sub: "생물관 vs 경제통상관", g: 1.41, color: "#ED4245", tag: "large 구간 초과" }],
+      xmin: -0.6, xmax: 2.6, axisLabel: "Hedges' g"
+    });
+    SC.forest("#s6-chart", {
+      items: [
+        { label: "대학생활 만족", sub: "평균적으로 유의한 차이 없음", g: 0.15, color: "#57F287", tag: "ns" },
+        { label: "삶의 만족", sub: "평균적으로 유의한 차이 없음", g: 0.36, color: "#E8A33D", tag: "ns" }
+      ],
+      xmin: -0.6, xmax: 2.6, axisLabel: "Hedges' g"
+    });
+    SC.forest("#s7-chart", {
+      items: [{ label: "수업 외 체류 시간", sub: "생물관 vs 경제통상관", g: 0.51, color: "#E8A33D", tag: "medium 구간" }],
+      xmin: -0.6, xmax: 2.6, axisLabel: "Hedges' g"
+    });
+    SC.forest("#s9-chart", {
+      items: [{ label: "'우리 건물' 소속감", sub: "본 연구 최대 효과 크기", g: 2.55, color: "#EB459E", tag: "large의 3배 이상" }],
+      xmin: -0.6, xmax: 2.6, axisLabel: "Hedges' g"
+    });
+    SC.splitHist("#s10-split", {
+      width: 560, height: 250, bins: 14,
+      stack: [
+        { counts: SC.gaussBins(0.4, 0.72, 500, 14, -3, 3), color: "#64B5CD" },
+        { counts: SC.gaussBins(-0.9, 0.78, 620, 14, -3, 3), color: "#E05D6E" }
+      ],
+      xLabel: "삶의 만족 (개념도)"
+    });
+    SC.histPair("#s10-p1", {
+      width: 400, height: 132, bins: 12, xspan: 2.4,
+      series: [
+        { mean: -0.02, counts: SC.gaussBins(-0.02, 0.7, 400, 12, -2.4, 2.4), color: "#E8A33D" },
+        { mean: 0.02, counts: SC.gaussBins(0.02, 0.7, 400, 12, -2.4, 2.4), color: "#5865F2" }
+      ]
+    });
+    SC.histPair("#s10-p2", {
+      width: 400, height: 132, bins: 12, xspan: 2.4,
+      series: [
+        { mean: -0.58, counts: SC.gaussBins(-0.58, 0.8, 420, 12, -2.4, 2.4), color: "#E8A33D" },
+        { mean: 0.0, counts: SC.gaussBins(0.0, 0.8, 420, 12, -2.4, 2.4), color: "#5865F2" }
+      ]
+    });
+  }
+
+  initCharts();
+  fit();
+  var start = parseInt((location.hash || "").replace("#", ""), 10);
+  go((start >= 1 && start <= total) ? start - 1 : 0);
+})();
+</script>
+</body>
+</html>

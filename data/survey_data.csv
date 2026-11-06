@@ -1,0 +1,19 @@
+# survey_data.csv
+# 데이터 리터러시 원칙: 이 파일은 연구에서 보고된 요약 통계치만 담고 있다.
+# 개인 단위 원자료(설문 88명 응답, 실측 17개 지표, 인터뷰 6명)는 절대 임의 생성하지 않는다.
+# 원자료 입수 시 이 파일을 원자료로 교체하되, 분석 노트북(notebooks/analysis.ipynb)의 로직은 유지할 것.
+# 컬럼: metric / group / value / n / unit / note
+metric,group,value,n,unit,note
+composite_relative_score,생물관,0.80,17,index,실측 17개 지표 표준화 종합 상대 점수 (기준 1.00)
+composite_relative_score,경제통상관,1.20,17,index,실측 17개 지표 표준화 종합 상대 점수 (기준 1.00)
+hedges_g,시설 만족도,1.41,88,effect,생물관 대비 경제통상관
+hedges_g,대학생활 만족,0.15,88,effect,평균적으로 유의한 차이 없음
+hedges_g,삶의 만족,0.36,88,effect,평균적으로 유의한 차이 없음
+hedges_g,수업 외 체류 시간,0.51,88,effect,불편한 건물을 떠나는 대응 전략과 교차
+hedges_g,우리 건물 소속감,2.55,88,effect,전체 평균 아래 숨겨진 격차
+hedges_g,삶의 만족(2~4학년),0.72,NA,effect,옛 사회관 경험 집단에서만 하락
+hedges_g,삶의 만족(1학년),0.00,NA,effect,차이 없음
+sample_size,설문 응답자,88,,persons,
+sample_size,심층 인터뷰,6,,persons,
+building_year,생물관(사회과학대학 임시 사용),1980,,year,임시 사용 중
+building_year,경제통상관,2013,,year,

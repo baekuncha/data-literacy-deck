@@ -1,0 +1,173 @@
+/* ============================================================
+   apple.css — Apple design system (getdesign "apple" output),
+   adapted for the Discord-dark slide deck.
+   Rules of the house (from DESIGN.md):
+   - One interactive accent: Sky Link Blue #2997ff on dark
+   - SF Pro stack, weight ladder 300/400/600/700 (no 500)
+   - Negative letter-spacing at display sizes ("Apple tight")
+   - Single product shadow only under imagery resting on a surface
+   - Pill grammar for actions, 18px radius for utility cards
+   - Press state = transform: scale(0.95), never a hex change
+   ============================================================ */
+
+:root {
+  --apple-primary: #0066cc;
+  --apple-focus: #0071e3;
+  --apple-on-dark: #2997ff;
+  --apple-ink: #1d1d1f;
+  --apple-muted: #cccccc;
+  --apple-tile-1: #272729;
+  --apple-tile-2: #2a2a2c;
+  --apple-tile-3: #252527;
+  --apple-hairline: rgba(255, 255, 255, 0.1);
+  --apple-product-shadow: rgba(0, 0, 0, 0.22) 3px 5px 30px 0;
+}
+
+/* ---------- Apple typography discipline ---------- */
+
+.apple-hero {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.07;
+  letter-spacing: -0.015em;
+}
+
+.apple-display {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.apple-tagline {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.19;
+  letter-spacing: 0.01em;
+  color: var(--dc-muted);
+}
+
+.apple-lead {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: 0.007em;
+}
+
+.apple-lead-airy {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--dc-muted);
+}
+
+.apple-body { font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.022em; }
+.apple-body-strong { font-size: 17px; font-weight: 600; line-height: 1.24; letter-spacing: -0.022em; }
+.apple-caption { font-size: 14px; font-weight: 400; line-height: 1.43; letter-spacing: -0.016em; color: var(--dc-muted); }
+.apple-fine { font-size: 12px; font-weight: 400; line-height: 1.5; letter-spacing: -0.008em; color: var(--dc-dim); }
+
+/* ---------- Apple actions (single accent) ---------- */
+
+.apple-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  background: var(--apple-on-dark);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  transition: transform 0.18s var(--ease-apple), filter 0.18s var(--ease-apple);
+}
+.apple-btn:hover { filter: brightness(1.1); }
+.apple-btn:active { transform: scale(0.95); }
+.apple-btn:focus-visible { outline: 2px solid var(--apple-focus); outline-offset: 3px; }
+
+.apple-btn.ghost {
+  background: transparent;
+  color: var(--apple-on-dark);
+  border: 1px solid rgba(41, 151, 255, 0.55);
+}
+.apple-btn.utility {
+  padding: 8px 15px;
+  border-radius: 8px;
+  background: #1d1d1f;
+  color: #fff;
+  font-size: 14px;
+}
+
+.apple-link { color: var(--apple-on-dark); }
+.apple-link:hover { text-decoration: underline; }
+
+/* ---------- Apple tiles & cards ---------- */
+
+.apple-tile {
+  border-radius: 0;
+  background: var(--apple-tile-1);
+}
+.apple-tile-2 { background: var(--apple-tile-2); }
+.apple-tile-3 { background: var(--apple-tile-3); }
+
+.apple-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--apple-hairline);
+  border-radius: 18px;
+  padding: 24px;
+}
+
+/* ---------- frosted bar (the only blur in the system) ---------- */
+
+.apple-frost {
+  background: rgba(30, 31, 34, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--apple-hairline);
+}
+
+/* ---------- the single product shadow ---------- */
+
+.apple-surface-shadow { box-shadow: var(--apple-product-shadow); }
+
+/* ---------- chip (configurator grammar) ---------- */
+
+.apple-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--apple-hairline);
+  color: var(--dc-text);
+  font-size: 14px;
+  line-height: 1;
+  transition: transform 0.18s var(--ease-apple), border-color 0.18s var(--ease-apple);
+}
+.apple-chip:active { transform: scale(0.95); }
+.apple-chip.selected {
+  border: 2px solid var(--apple-focus);
+  border-color: var(--apple-on-dark);
+}
+
+/* ---------- Apple section rhythm ---------- */
+
+.apple-section { padding: 80px 0; }
+.apple-section.center { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+
+/* ---------- deck-specific Apple adjustments ---------- */
+
+.slide .apple-hero { font-size: clamp(40px, 5vw, 56px); }
+.apple-kicker {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--apple-on-dark);
+}
