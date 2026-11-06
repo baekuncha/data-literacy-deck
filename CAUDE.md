@@ -1,105 +1,82 @@
-# CAUDE.md — 프로젝트 운영 가이드
+# CAUDE.md — 에이전트·설정 가이드 (Orca Agent, Supabase 등)
+
+이 파일은 이 저장소에서 작업하는 AI 에이전트(Orca/Claude 등)와 배포 환경을 위한 지침이다.
 
 ## 1. 프로젝트 개요
 
-부산대학교 사회학과 학술제 발표 덱: **"건물은 학생을 만드는가 — 단과대학 건물 인프라 차이와 학생의 만족도, 삶의 질"**
+부산대학교 사회학과 학술제 발표(25분)용 HTML 모션 그래픽 슬라이드 덱.
+연구: "건물은 학생을 만드는가: 단과대학 건물 인프라 차이와 학생의 만족도, 삶의 질"
+원고: `학술제_최종원고_v8.pdf` (진실의 원천. 모든 수치는 이 파일에서만 취할 것)
 
-- 발표 시간: 25분 / 슬라이드: 15장 / 규격: 16:9 (1280×720)
-- 연구 설계: 혼합방법 (실측 17개 지표 · 설문 88명 · 심층 인터뷰 6명)
-- 배포: GitHub Pages
-
-## 2. Orca Agent 설정
-
-Orca Agent가 이 저장소에서 작업할 때 준수할 규칙:
-
-```yaml
-agent:
-  name: orca
-  role: "데이터 분석가 겸 프론트엔드 개발자"
-  context_files:
-    - DESIGN.md          # 디자인 토큰 및 슬라이드 양식 (Apple 분석 + Discord 다크 어댑테이션)
-    - data/survey_data.csv
-  rules:
-    - "제공된 g 값(1.41/0.15/0.36/0.51/2.55/0.72)과 점수(0.80/1.20), n(88/6/17) 외 수치를 임의 생성하지 않는다"
-    - "결측치를 조용히 평균 대체하거나 이상치를 기계적으로 삭제하지 않는다"
-    - "요약 시 평균만 제시하지 않고 중앙값·n·SD를 함께 보고한다"
-    - "히스토그램은 '보고된 g 기반 개형 개념도'임을 각주로 명시한다"
-    - "인터뷰 인용은 원문 확보 전 placeholder 유지"
-    - "HTML/CSS/JS 코드에 불필요한 주석을 추가하지 않는다"
-  verification:
-    - "index.html 로컬 오픈 시 15개 슬라이드 모두 렌더링되는지 확인"
-    - "charts.js가 SC.bar / SC.forest / SC.histPair / SC.splitHist를 노출하는지 확인"
-```
-
-## 3. Supabase 설정 (설문 원자료 적재용)
-
-원자료(설문 88명) 입수 시 Supabase에 적재해 분석 노트북과 연동한다. **원자료가 없으면 이 섹션을 실행하지 않는다.**
-
-환경 변수 (`.env`, 절대 커밋 금지):
+## 2. 폴더 구조
 
 ```
-SUPABASE_URL=https://<project-ref>.supabase.co
-SUPABASE_ANON_KEY=<anon-key>
+/
+├── /assets
+│   ├── /images        # Claude in Chrome 캡처, Google Flow 다이어그램 에셋 (현재 비어 있음)
+│   ├── /css
+│   │   ├── apple.css  # getdesign "apple" 템플릿 기반 디자인 토큰 (아이폰 키노트 스타일)
+│   │   └── minim.css  # 미니멀 리셋 + 덱 운영 유틸
+│   └── /js
+│       ├── anime.min.js  # v3.2.2 로컬 사본 (CDN 의존 없음)
+│       └── charts.js     # seaborn 스타일 SVG 차트 8종 + anime.js 모션
+├── /data
+│   └── survey_data.csv   # 요약 데이터 원본 (정제 로그 포함, 개인 응답 없음)
+├── /notebooks
+│   └── analysis.ipynb    # 요약 통계 재현 노트북 (Colab-ready)
+├── index.html            # 18장 슬라이드 덱 메인
+├── DESIGN.md             # 디자인 가이드
+└── CAUDE.md              # 본 파일
 ```
 
-테이블 스키마 예시 (원자료 구조 확정 후 수정할 것):
+## 3. 에이전트 규칙 (필수)
 
-```sql
-create table survey_responses (
-  id          uuid primary key default gen_random_uuid(),
-  building    text not null check (building in ('생물관', '경제통상관')),
-  grade       int  not null check (grade between 1 and 4),
-  facility_sat      numeric,   -- 시설 만족도
-  college_life_sat  numeric,   -- 대학생활 만족
-  life_sat          numeric,   -- 삶의 만족
-  stay_time_hours   numeric,   -- 수업 외 체류 시간
-  building_identity numeric,   -- '우리 건물' 소속감
-  interview_id      text,      -- 심층 인터뷰 참여자 연계(6명, nullable)
-  created_at timestamp default now()
-);
+### 데이터 무결성 (최우선)
+- **수치 조작 금지.** 새 수치를 만들거나 "있을 법한" 값을 지어내지 않는다. 차트·슬라이드의 모든 숫자는 원고 PDF의 보고값과 `data/survey_data.csv`에 기록된 값만 사용.
+- **결측치 기계적 정제 금지.** 실측 3개 지표(주차, 책걸상 훼손, 휴게 면적)는 미측정이며 대체하지 않았다. 평균 대체는 표준편차를 줄여 데이터를 고르게 보이게 하는 왜곡이다.
+- **정제는 판단.** 제외/처리 규칙을 바꿀 때는 `survey_data.csv` 상단 정제 로그에 날짜·사유를 기록한다.
+- **예시 차트 라벨 유지.** `bimodal`(이봉 분포)은 개념 예시도이며 개인 응답이 아니다. `charts.js` 안의 "개념 예시도" 주석과 차트 하단 라벨을 삭제하지 않는다.
+- 통계 보고: 평균·중앙값, n, SD를 함께. g는 Hedges' g, CI는 부트스트랩 5,000회 95%.
+
+### 디자인
+- 딥 블랙(#000) 무대, 단일 액센트(#2997ff), 무게 600 헤드라인, 무게 500·장식 그라데이션·카드 그림자 금지. 상세는 `DESIGN.md`.
+
+### 코드
+- 수정 시 `index.html` 본문 수치 ↔ `charts.js` 데이터 배열 ↔ `survey_data.csv`를 함께 맞춘다.
+- 검증 명령:
+  - `node --check assets/js/charts.js`
+  - 슬라이드 수/차트 id 확인: `index.html`의 `spec` 배열과 `<section class="slide">` 개수(18) 일치
+  - 로컬 미리보기: `npx serve .` 또는 브라우저에서 `index.html` 직접 열기
+
+## 4. Supabase 설정 (설문 조사 백엔드)
+
+이 저장소에는 키·시크릿을 넣지 않는다. 설문 수집용 Supabase를 연결하려면 `.env.local`(gitignore 대상)에만 기록한다.
+
+```env
+SUPABASE_URL=https://<project>.supabase.co
+SUPABASE_ANON_KEY=<anon-key>          # 클라이언트용 공개 키
+SUPABASE_SERVICE_ROLE_KEY=<secret>    # 서버 전용 — 절대 커밋 금지
 ```
 
-데이터 리터러시 원칙:
-
-- 결측치는 `null` 유지 — 평균 대체 금지
-- 집단 비교는 Hedges' g (pingouin `compute_effsize(eftype="hedges")`)
-- 보고 시 `n / mean / median / sd` 동시 출력
-
-## 4. 로컬 실행 & 검증
-
-```powershell
-# 슬라이드 확인 (루트에서)
-Start-Process index.html          # 또는 npx serve .
-node --check assets/js/charts.js  # JS 문법 검사
-```
+원고 기준 데이터 사양:
+- 테이블: `survey_responses` (문항 Q3~Q58, 원고 Appendix A 참조), `interview_transcripts` (비공개)
+- RLS: 응답 테이블은 INSERT만 허용(anon), 조회는 service role 전용
+- 정제 규칙(102→88건)은 서버 사이드에서 사전등록 기준으로 적용하고, 그 판단은 정제 로그에 기록
 
 ## 5. GitHub Pages 배포
 
 ```powershell
-gh auth login
-git config --global user.name "baekuncha"
-git config --global user.email "makeouthill@pusan.ac.kr"
-git add -A
-git commit -m "feat: 학술제 발표 덱 (15장)"
-gh repo create data-literacy-deck --public --source=. --remote=origin --push
-gh api repos/{OWNER}/data-literacy-deck/pages -X POST -f "source[branch]=main" -f "source[path]=/"
-# 접속: https://{OWNER}.github.io/data-literacy-deck/
+git add .
+git commit -m "학술제 발표 덱: 18장 모션 슬라이드 + seaborn 차트"
+git push origin main
+# GitHub 저장소 Settings → Pages → Source: "Deploy from a branch" → main / root
 ```
 
-## 6. 폴더 구조
+- 배포 경로: 저장소 루트의 `index.html`이 그대로 서빙된다(폴더 구조의 `/data-literacy-deck` = 저장소 루트로 해석).
+- 배포 주소: `https://<user>.github.io/<repo>/`
+- 표시 확인: 18/18 카운터, 진행 바, 키보드/휠 네비게이션, 8개 차트 재생.
 
-```
-/                        # GitHub Pages 루트 (main 브랜치)
-├── assets/
-│   ├── images/          # Claude in Chrome / Google Flow 캡처 등 발표 보조 에셋
-│   ├── css/apple.css    # getdesign "apple" 디자인 시스템 구현체
-│   ├── css/minim.css    # minim 라이브러리 + PPT 양식 프레임워크
-│   └── js/
-│       ├── anime.min.js # 모션 그래픽 (anime.js 3.2.2)
-│       └── charts.js    # seaborn 스타일 SVG 차트 빌더
-├── data/survey_data.csv # 보고된 요약 통계치만 (원자료 대체 예정)
-├── notebooks/analysis.ipynb
-├── index.html           # 15장 슬라이드 덱
-├── DESIGN.md
-└── CAUDE.md
-```
+## 6. 에셋 정책
+
+- `/assets/images`는 Claude in Chrome 스크린샷·Google Flow 다이어그램용. 현재 슬라이드는 차트(SVG) 중심이라 이미지 없이 동작한다.
+- 인터뷰 음성·원자료·개인정보는 이 저장소에 절대 커밋하지 않는다.
